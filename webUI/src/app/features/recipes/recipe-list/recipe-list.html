@@ -1,0 +1,32 @@
+<div class="recipe-layout">
+  <aside class="recipe-filters">
+    <mat-card>
+      <mat-card-title>Filters</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Cuisine</mat-label>
+        <mat-select>
+          <mat-option value="italian">Italian</mat-option>
+          <mat-option value="mexican">Mexican</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card>
+  </aside>
+
+  <section class="recipe-grid-container">
+    <div class="recipe-grid">
+      <mat-card *ngFor="let recipe of recipes" class="recipe-card" [routerLink]="['/recipes', recipe.id]">
+        <img mat-card-image [src]="recipe.imageUrl" alt="{{recipe.title}}">
+        <mat-card-content>
+          <mat-card-title>{{ recipe.title }}</mat-card-title>
+          <p class="meta-info">
+            <mat-icon class="icon-small">schedule</mat-icon> {{ recipe.prepTime }} min
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-flat-button color="primary">View</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </section>
+</div>

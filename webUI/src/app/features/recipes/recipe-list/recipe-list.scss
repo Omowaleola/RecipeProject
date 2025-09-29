@@ -1,0 +1,46 @@
+.recipe-layout {
+  display: grid;
+  // Define three columns for desktop: Filters (250px), Grid (auto), Detail (optional)
+  grid-template-columns: 250px 1fr;
+  gap: 24px;
+  padding: 24px;
+}
+
+.recipe-filters {
+  position: sticky; // Keep filters in place
+  top: 24px;
+  .mat-mdc-card {
+    padding: 16px;
+  }
+}
+
+.recipe-grid {
+  display: grid;
+  // Responsive grid: 3-5 columns for desktop based on screen size
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+
+  .recipe-card {
+    transition: transform 0.2s;
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .meta-info {
+      display: flex;
+      align-items: center;
+      color: var(--mat-typography-body-2);
+      .icon-small {
+        font-size: 18px;
+        margin-right: 4px;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="planner-layout">
+  <aside class="planner-sidebar">
+    <mat-card>
+      <mat-card-title>Drag Recipes to Plan</mat-card-title>
+      <mat-divider></mat-divider>
+      <div *ngFor="let recipe of draggableRecipes" class="draggable-recipe" cdkDrag>
+        {{ recipe.title }}
+      </div>
+    </mat-card>
+  </aside>
+
+  <section class="planner-calendar-view">
+    <mat-card>
+      <mat-card-title>Weekly Meal Schedule</mat-card-title>
+    </mat-card>
+  </section>
+</div>
