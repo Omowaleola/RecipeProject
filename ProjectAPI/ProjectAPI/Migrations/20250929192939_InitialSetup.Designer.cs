@@ -11,7 +11,7 @@ using ProjectAPI.DAL.Contexts;
 namespace ProjectAPI.Migrations
 {
     [DbContext(typeof(RecipeDbContext))]
-    [Migration("20250929183021_InitialSetup")]
+    [Migration("20250929192939_InitialSetup")]
     partial class InitialSetup
     {
         /// <inheritdoc />
